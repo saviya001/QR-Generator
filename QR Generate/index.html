@@ -208,7 +208,8 @@
     <footer>
       <div class="container foot">
         <span>© <span id="year"></span> QR Pro</span>
-        <span>Made With S creation</span>
+        <span> OUTSET TRAVELES. All Rights Reserved. Created  by <a href="https://www.linkedin.com/in/savindu-wijesinghe/"class="hover:text-cyan-400 transition"> Savindu Wijesinghe </a>.
+                </p></span>
         <span><a href="#top">Back to top</a></span>
       </div>
     </footer>
@@ -240,12 +241,12 @@
       const text = document.getElementById('text').value.trim();
       const size = parseInt(document.getElementById('size').value, 10);
       const lvl = document.getElementById('level').value;
-      const colorDark = document.getElementById('colorDark').value; // 🎨 Get dark color
-      const colorLight = document.getElementById('colorLight').value; // 🎨 Get light color
+      const colorDark = document.getElementById('colorDark').value; 
+      const colorLight = document.getElementById('colorLight').value; 
 
       const wrap = document.getElementById('qrcode');
       wrap.innerHTML = '';
-      wrap.classList.remove('loaded'); // ✨ Reset for fade-in effect
+      wrap.classList.remove('loaded'); 
 
       if(!text){
         showMsg('Enter some content to generate a QR code.', 'err');
@@ -261,9 +262,9 @@
           colorLight: colorLight,
           correctLevel: levelMap(lvl)
         });
-        // ✨ Add small delay for the fade-in effect to work properly
+       
         setTimeout(() => {
-            wrap.style.background = colorLight; // Set background of container
+            wrap.style.background = colorLight; 
             wrap.classList.add('loaded');
         }, 50);
 
@@ -281,7 +282,7 @@
       const dataUrl = canvas.toDataURL(type === 'png' ? 'image/png' : 'image/jpeg');
       
       if (type === 'svg') {
-          // ⬇️ Create an SVG file with the QR code image embedded inside it
+        
           const size = parseInt(document.getElementById('size').value, 10);
           const svgString = `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
             <image href="${dataUrl}" height="${size}" width="${size}"/>
@@ -336,7 +337,7 @@
     window.addEventListener('DOMContentLoaded', ()=>{
       const yearSpans = document.querySelectorAll('#year');
       yearSpans.forEach(span => span.textContent = new Date().getFullYear());
-      // Correction for duplicate ID issue from original code
+      
       if(yearSpans.length > 1) yearSpans[1].id = ''; 
       
       document.getElementById('text').value = 'Welcome to QR Pro 👋';
@@ -345,3 +346,4 @@
   </script>
 </body>
 </html>
+
